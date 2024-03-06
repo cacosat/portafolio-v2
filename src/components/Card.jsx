@@ -2,27 +2,36 @@ import React from "react";
 
 export default function Card(props) {
     // helper functions
-    const height = 512;
-    const width = 512;
-    const border = 23;
-    let  innerWidth = ((width, border) => {return width-border});
-    let innerHeight;
+    
+    // props.config
+    const config = props.config.heroCard;
+    
+    const innerWidth = config.height-config.border;
+    const innerHeight = config.width-config.border;
 
     return <>
     {/* JSX */}
         <div>
-            contenedor card 
-            <div className={`bg-white bg-opacity-25 border border-white border-opacity-25 rounded-2xl w-[${width}px] h-[${height}px]`}>
-                {/* Content of the card goes here */}
-                adfaoisdf
-                dsfasd
-            </div>
 
-            <div className={`flex items-center justify-center border border-white border-opacity-25 rounded-2xl w-[${width}px] h-[${height}px]`}>
-                <div className={` bg-white bg-opacity-25 border border-white border-opacity-25 rounded-2xl w-[${innerWidth(width, border)}px] h-[100px]`}>
-                    {/* Content of the card goes here */}
-                    adfaoisdf
-                    dsfasd
+            <div className={`flex items-center justify-center bg-gradient-to-bl from-white/25 rounded-2xl  w-[${config.width}px] h-[${config.height}px]`}>
+                {/* first bg -> handles stroke / border */}
+                <div className={`flex items-center justify-center bg-[${config.primaryGradient}]/60 rounded-2xl `}
+                    style={{
+                        height: `${innerWidth}px`,
+                        width: `${innerHeight}px`,
+                    }}
+                    >
+                    {/* 2nd bg -> handles purple gradient */}
+                    <div className={`flex items-end bg-gradient-to-tr from-black rounded-2xl`}
+                        style={{
+                            height: `${innerWidth}px`,
+                            width: `${innerHeight}px`,
+                        }}
+                    >
+                        {/* 3rd bg: black gradient */}
+                        <div>dañslkfdñal</div>
+                        dsfasd
+                    </div>
                 </div>
             </div>
         </div>
