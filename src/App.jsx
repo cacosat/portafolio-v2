@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Card from './components/Card'
+import projectImage from './assets/cardsBg/conway.gif'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -8,13 +9,18 @@ function App() {
   const cardsConfig = {
     heroCard: {
       height: '512',
-      width: '512',
-      border: '1',
-      borderColor: '#FFFFFF',
-      primaryGradient: 'rgb(42,17,107)',
-      shadowGradient: '#000000'
+      width: '1000',
+      border: '2',
+      primaryBg: '#2a116b',
     },
+    projectCard: {
+      height: '712',
+      width: '400',
+      border: '2', 
+      primaryBg: '#2a116b',
+    }
   }
+  
 
   return (
     <>
