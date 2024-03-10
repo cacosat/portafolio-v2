@@ -2,7 +2,9 @@
   position: relative;
   overflow-x: hidden;
   height: 100vh;
-  margin: 8px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
 }
 
 #root::before {
