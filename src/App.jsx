@@ -77,7 +77,7 @@ function App() {
 
     },
     contactCard: {
-      type: 'contact',
+      type: 'form',
       height: '712',
       width: '400',
       border: '2', 
