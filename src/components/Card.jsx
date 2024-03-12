@@ -7,9 +7,7 @@ export default function Card(props) {
     
     // props.config
     const config = props.config;
-    
-    const innerWidth = config.height-config.border;
-    const innerHeight = config.width-config.border;
+    console.log(props.config)
 
     return <>
     {/* JSX */}
@@ -28,11 +26,17 @@ export default function Card(props) {
                     }}
                 ></div>
                 {/* Content here, make sure this comes after the overlay div so it's on top */}
-                <div className="m-8 z-10 opacity-100">
-                    <h1>{config.title}</h1>
-                    <p>{config.fecha}</p>
+                <div className="flex flex-col items-start gap-2 m-8 z-10 opacity-100">
+                    <div className="flex flex-col ">
+                        <h1 className={`${config.type === 'hero' ? 'text-[64px] font-bold' : 'text-2xl'}`}>
+                            {config.title}
+                        </h1>
+                        <p className="">
+                            {config.fecha}
+                        </p>
+                    </div>
                     {/* TODO toggle for description */}
-                    {/* <p>{config.descripcion}</p> */}
+                    <p>{config.descripcion}</p>
                     <button>Ver más</button>
                 </div>
             </div>
