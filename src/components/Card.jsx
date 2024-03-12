@@ -26,17 +26,19 @@ export default function Card(props) {
                     }}
                 ></div>
                 {/* Content here, make sure this comes after the overlay div so it's on top */}
-                <div className="flex flex-col items-start gap-2 m-8 z-10 opacity-100">
-                    <div className="flex flex-col ">
-                        <h1 className={`${config.type === 'hero' ? 'text-[64px] font-bold' : 'text-2xl'}`}>
+                <div className="flex flex-col items-start gap-4 m-6 lg:m-8 z-10 opacity-100">
+                    <div className="flex flex-col gap-2">
+                        <h1 className={`${config.type === 'hero' ? 'text-[64px] font-semibold' : 'text-lg sm:text-2xl'} text-neutral-50`}>
                             {config.title}
                         </h1>
-                        <p className="">
+                        <p className={`text-[12px] text-neutral-500`}>
                             {config.fecha}
                         </p>
                     </div>
                     {/* TODO toggle for description */}
-                    <p>{config.descripcion}</p>
+                    <p className={`${config.type === 'hero' ? 'flex max-w-[45ch]' : 'hidden md:flex'} font-light text-[14px] text-neutral-300 tracking-wide`}>
+                        {config.descripcion}
+                    </p>
                     <button>Ver más</button>
                 </div>
             </div>
