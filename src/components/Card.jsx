@@ -1,5 +1,5 @@
 import React from "react";
-
+import downloadSvg from '../assets/download.svg'
 import projectImage from '../assets/cardsBg/conway.gif'
 
 export default function Card(props) {
@@ -12,21 +12,35 @@ export default function Card(props) {
         switch (type) {
             // type is a string of types: hero|project|about|form|footer
             case 'hero':
+                return (
+                    <div className="flex gap-4">
+                        <button className={`flex items-center gap-2 bg-[#391597] hover:bg-[#4419B3] transition 300ms text-neutral-300 text-sm font-light py-2 px-6 rounded-full`} 
+                                style={{ 
+                                    boxShadow: 'inset 0 0 5px #883FD4' 
+                                }}>
+                            Más sobre mi
+                        </button>
+                        <button className={`flex items-center gap-2 bg-[#0E0A1D] hover:bg-[#120D29] transition 300ms text-neutral-300 text-sm font-light py-2 px-6 rounded-full`} 
+                                style={{ 
+                                    boxShadow: 'inset 0 0 5px #883FD4'
+                                }}>
+                            Curriculum
+                            <img src={downloadSvg} alt="Download" />
+                        </button>
+                    </div>
+                );
+            
+            case 'project': // One button "Ver más", links to project page
+                console.log('project buttons')
                 break;
             
-            case 'project':
-                break;
-            
-            case 'about':
-                break;
-            
-            case 'form':
-                break;
-            
-            case 'footer':
+            case 'form': // form component to render for about me card
                 break;
         
-            default: // footer and about return nothing
+            case 'footer': // footer renders name - mail
+                break;
+            
+            default: // about returns nothing
                 break;
         }
     }
