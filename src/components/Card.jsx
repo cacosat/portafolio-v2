@@ -7,7 +7,29 @@ export default function Card(props) {
     
     // props.config
     const config = props.config;
-    console.log(props.config)
+
+    function buttonLayout(type) {
+        switch (type) {
+            // type is a string of types: hero|project|about|form|footer
+            case 'hero':
+                break;
+            
+            case 'project':
+                break;
+            
+            case 'about':
+                break;
+            
+            case 'form':
+                break;
+            
+            case 'footer':
+                break;
+        
+            default: // footer and about return nothing
+                break;
+        }
+    }
 
     return <>
     {/* JSX */}
@@ -31,7 +53,7 @@ export default function Card(props) {
                         <h1 className={`${config.type === 'hero' ? 'text-[64px] font-semibold' : 'text-lg sm:text-2xl'} text-neutral-50`}>
                             {config.title}
                         </h1>
-                        <p className={`text-[12px] text-neutral-500`}>
+                        <p className={`text-[12px] text-neutral-500 font-semibold`}>
                             {config.fecha}
                         </p>
                     </div>
@@ -39,7 +61,13 @@ export default function Card(props) {
                     <p className={`${config.type === 'hero' ? 'flex max-w-[45ch]' : 'hidden md:flex'} font-light text-[14px] text-neutral-300 tracking-wide`}>
                         {config.descripcion}
                     </p>
-                    <button>Ver más</button>
+                    <div>
+                        {/* container for 3 diferent button layouts, only one rendered via a */}
+                        {/* switch statement of prop.config.type === hero|project|about|form|footer; */}
+                        {/* about and footer return empty, project one button, hero buttons plus socials, */}
+                        {/* and forms the contact form */}
+                        {buttonLayout(props.config.type)}
+                    </div>
                 </div>
             </div>
         </div>
