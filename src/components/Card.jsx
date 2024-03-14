@@ -1,6 +1,8 @@
 import React from "react";
 import downloadSvg from '../assets/download.svg'
 import projectImage from '../assets/cardsBg/conway.gif'
+import linkedin from '../assets/linkedin.png'
+import github from '../assets/github.png'
 
 export default function Card(props) {
     // helper functions
@@ -8,31 +10,58 @@ export default function Card(props) {
     // props.config
     const config = props.config;
 
-    function buttonLayout(type) {
-        switch (type) {
+    function buttonLayout(config) {
+        switch (config.type) {
             // type is a string of types: hero|project|about|form|footer
             case 'hero':
-                return (
-                    <div className="flex gap-4">
-                        <button className={`flex items-center gap-2 bg-[#391597] hover:bg-[#4419B3] transition 300ms text-neutral-300 text-sm font-light py-2 px-6 rounded-full`} 
-                                style={{ 
-                                    boxShadow: 'inset 0 0 5px #883FD4' 
-                                }}>
-                            Más sobre mi
-                        </button>
-                        <button className={`flex items-center gap-2 bg-[#0E0A1D] hover:bg-[#120D29] transition 300ms text-neutral-300 text-sm font-light py-2 px-6 rounded-full`} 
-                                style={{ 
-                                    boxShadow: 'inset 0 0 5px #883FD4'
-                                }}>
-                            Curriculum
-                            <img src={downloadSvg} alt="Download" />
-                        </button>
-                    </div>
-                );
+                return <>
+                        <div className="flex items-center justify-between w-[100%] gap-4">
+                            <div className="flex gap-4">
+                                <button className={`flex gap-2 max-h-9 bg-[#391597] hover:bg-[#4419B3] transition 300ms text-neutral-300 text-sm font-light py-2 px-6 rounded-full`} 
+                                        style={{ 
+                                            boxShadow: 'inset 0 0 5px #883FD4' 
+                                        }}>
+                                    Sobre mi
+                                </button>
+                                <button className={`flex items-center gap-2 max-h-9 bg-[#0E0A1D] hover:bg-[#120D29] transition 300ms text-neutral-300 text-sm font-light py-2 px-6 rounded-full`} 
+                                        style={{ 
+                                            boxShadow: 'inset 0 0 5px #883FD4'
+                                        }}>
+                                    Curriculum
+                                    <img src={downloadSvg} alt="Download" />
+                                </button>
+                            </div>
+                            <div className="md:flex flex-col items-end hidden">
+                                <div className="flex gap-2">
+                                    <a href="https://www.linkedin.com/in/joaqu%C3%ADn-sateler-villanueva/" target="_blank">
+                                        <img src={linkedin} alt="" />
+                                    </a>
+                                    <a href="https://github.com/cacosat" target="_blank">
+                                        <img src={github} alt="" />
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="mailto:jsateler1@uc.cl" className=" underline text-neutral-600 font-semibold text-sm">
+                                        jsateler1@uc.cl
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </>;
             
             case 'project': // One button "Ver más", links to project page
-                console.log('project buttons')
-                break;
+                return <>
+                    <div className="flex gap-4">
+                        <a href={config.link} target="_blank">
+                            <button className={`flex items-center gap-2 max-h-8 bg-[#0E0A1D] hover:bg-[#120D29] transition 300ms text-neutral-300 text-sm font-light py-2 px-6 rounded-full`} 
+                                    style={{ 
+                                        boxShadow: 'inset 0 0 5px #883FD4'
+                                    }}>
+                                Ver más
+                            </button>
+                        </a>
+                    </div>
+                </>
             
             case 'form': // form component to render for about me card
                 break;
@@ -62,9 +91,9 @@ export default function Card(props) {
                     }}
                 ></div>
                 {/* Content here, make sure this comes after the overlay div so it's on top */}
-                <div className="flex flex-col items-start gap-4 m-6 lg:m-8 z-10 opacity-100">
+                <div className="flex flex-col items-start gap-4 m-6 lg:m-8 z-10 opacity-100 w-[100%]">
                     <div className="flex flex-col gap-2">
-                        <h1 className={`${config.type === 'hero' ? 'text-[64px] font-semibold' : 'text-lg sm:text-2xl'} text-neutral-50`}>
+                        <h1 className={`${config.type === 'hero' ? 'text-[64px] font-semibold' : 'text-sm sm:text-xl md:text-2xl'}  text-neutral-50`}>
                             {config.title}
                         </h1>
                         <p className={`text-[12px] text-neutral-500 font-semibold`}>
@@ -72,15 +101,15 @@ export default function Card(props) {
                         </p>
                     </div>
                     {/* TODO toggle for description */}
-                    <p className={`${config.type === 'hero' ? 'flex max-w-[45ch]' : 'hidden md:flex'} font-light text-[14px] text-neutral-300 tracking-wide`}>
+                    <p className={`${config.type === 'hero' ? 'flex max-w-[45ch]' : config.type === 'about' ? 'flex' : 'hidden sm:flex'} font-light text-[14px] text-neutral-300 tracking-wide`}>
                         {config.descripcion}
                     </p>
-                    <div>
+                    <div className="w-full">
                         {/* container for 3 diferent button layouts, only one rendered via a */}
                         {/* switch statement of prop.config.type === hero|project|about|form|footer; */}
                         {/* about and footer return empty, project one button, hero buttons plus socials, */}
                         {/* and forms the contact form */}
-                        {buttonLayout(props.config.type)}
+                        {buttonLayout(config)}
                     </div>
                 </div>
             </div>

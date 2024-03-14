@@ -23,6 +23,7 @@ function App() {
     },
     projectCardExpenseTracker: {
       type: 'project',
+      link: 'http://mockurl.com/expenseTracker',
       height: '712',
       width: '400',
       border: '2', 
@@ -34,28 +35,31 @@ function App() {
     }, 
     projectCardMedible: {
       type: 'project',
+      link: 'http://mockurl.com/medible',
       height: '712',
       width: '400',
       border: '2', 
       primaryBg: uxImage,
       title: 'Experiencia con Medible',
       fecha: '01-01-2020',
-      descripcion: 'Lorem ipsum dolor sit amet consectetur. Nam faucibus vel imperdiet elementum non pulvinar quis at.',
+      descripcion: 'Lorem ipsum dolor sit amet consectetur. Nam faucibus vel imperdiet elementum non pulvinar quis at. Lorem ipsum dolor sit amet consectetur. Nam faucibus vel imperdiet elementum non pulvinar quis at.',
 
     }, 
     projectCardSessions: {
       type: 'project',
+      link: 'http://mockurl.com/sessions',
       height: '712',
       width: '400',
       border: '2', 
       primaryBg: sessionImage,
       title: 'Aplicación de productividad en base a la técnica pomodoro',
       fecha: '01-01-2020',
-      descripcion: 'Lorem ipsum dolor sit amet consectetur. Nam faucibus vel imperdiet elementum non pulvinar quis at.',
+      descripcion: '',
 
     }, 
     projectCardConway: {
       type: 'project',
+      link: 'http://mockurl.com/conway',
       height: '712',
       width: '400',
       border: '2', 
@@ -66,7 +70,7 @@ function App() {
 
     },
     aboutCard: {
-      type: 'project',
+      type: 'about',
       height: '712',
       width: '400',
       border: '2', 
@@ -103,8 +107,8 @@ function App() {
         {/* TODO toggle for description */}
         {/* TODO Responsiveness: below 750px change layout */}
         <Card config={cardsConfig.heroCard} className='col-span-4 row-span-3' />
-        <Card config={cardsConfig.projectCardExpenseTracker} className=' lg:row-span-2 lg:col-span-1 sm:col-span-1 sm:row-span-3 col-span-2 row-span-2' />
-        <Card config={cardsConfig.projectCardMedible} className='lg:col-span-3 lg:row-span-1 sm:col-span-3 sm:row-span-1 col-span-2' />
+        <Card config={cardsConfig.projectCardExpenseTracker} className=' lg:row-span-3 lg:col-span-1 sm:col-span-1 sm:row-span-3 col-span-2 row-span-2' />
+        <Card config={cardsConfig.projectCardMedible} className='lg:col-span-3 lg:row-span-2 sm:col-span-3 sm:row-span-1 col-span-2' />
         <Card config={cardsConfig.projectCardSessions} className='lg:col-span-3 lg:row-span-1 sm:col-span-2 sm:row-span-2 col-span-2 row-span-2' />
         <Card config={cardsConfig.projectCardConway} className='lg:row-span-2 lg:col-span-1 sm:col-span-1 sm:row-span-2 col-span-2' />
         <Card config={cardsConfig.aboutCard} className='lg:row-span-2 lg:col-span-2  sm:col-span-2 sm:row-span-1 col-span-4 row-span-2' />
@@ -112,7 +116,6 @@ function App() {
         <Card config={cardsConfig.footerCard} className='col-span-4' />
 
       </div>
-      <h1 className=' '>footer</h1>
     </>
   )
 }
