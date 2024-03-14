@@ -13,9 +13,6 @@ function App() {
   const cardsConfig = {
     heroCard: {
       type: 'hero',
-      height: '512',
-      width: '1000',
-      border: '2',
       primaryBg: '#2a116b',
       title: 'Joaquín Sateler',
       fecha: '',
@@ -24,9 +21,6 @@ function App() {
     projectCardExpenseTracker: {
       type: 'project',
       link: 'http://mockurl.com/expenseTracker',
-      height: '712',
-      width: '400',
-      border: '2', 
       primaryBg: expenseImage,
       title: 'Desarrollo de producto asistido por IA',
       fecha: '01-01-2020',
@@ -36,9 +30,6 @@ function App() {
     projectCardMedible: {
       type: 'project',
       link: 'http://mockurl.com/medible',
-      height: '712',
-      width: '400',
-      border: '2', 
       primaryBg: uxImage,
       title: 'Experiencia con Medible',
       fecha: '01-01-2020',
@@ -48,9 +39,6 @@ function App() {
     projectCardSessions: {
       type: 'project',
       link: 'http://mockurl.com/sessions',
-      height: '712',
-      width: '400',
-      border: '2', 
       primaryBg: sessionImage,
       title: 'Aplicación de productividad en base a la técnica pomodoro',
       fecha: '01-01-2020',
@@ -60,9 +48,6 @@ function App() {
     projectCardConway: {
       type: 'project',
       link: 'http://mockurl.com/conway',
-      height: '712',
-      width: '400',
-      border: '2', 
       primaryBg: conwayImage,
       title: "Conway's Game of life",
       fecha: '01-01-2020',
@@ -71,9 +56,6 @@ function App() {
     },
     aboutCard: {
       type: 'about',
-      height: '712',
-      width: '400',
-      border: '2', 
       primaryBg: aboutImage,
       title: 'Más sobre mi',
       fecha: '',
@@ -82,9 +64,6 @@ function App() {
     },
     contactCard: {
       type: 'form',
-      height: '712',
-      width: '400',
-      border: '2', 
       primaryBg: '#FFFFFF',
       title: 'Hablemos',
       fecha: '01-01-2020',
@@ -92,11 +71,8 @@ function App() {
     }, 
     footerCard: {
       type: 'footer',
-      height: '512',
-      width: '1000',
-      border: '2',
-      primaryBg: '#2a116b',
-      title: 'Footer'
+      primaryBg: '#0F0821',
+      title: ''
     },
   }
   

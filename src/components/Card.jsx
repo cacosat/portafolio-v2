@@ -67,7 +67,16 @@ export default function Card(props) {
                 break;
         
             case 'footer': // footer renders name - mail
-                break;
+                return (
+                    <div className="w-full flex justify-between">
+                        <a href="https://www.linkedin.com/in/joaqu%C3%ADn-sateler-villanueva/" className="text-neutral-500" target="_blank">
+                            Joaquín Sateler
+                        </a>
+                        <a href="mailto:jsateler1@uc.cl" className="underline text-neutral-500 font-semibold text-sm">
+                            jsateler1@uc.cl
+                        </a>
+                    </div>
+                );
             
             default: // about returns nothing
                 break;
@@ -85,7 +94,7 @@ export default function Card(props) {
                 >
                 {/* handles purple gradient */}
                 <div
-                    className="absolute inset-0 bg-gradient-to-tr from-[#0d0d0d] via-[#0d0d0de5] via-15% bg-opacity-0 rounded-2xl backdrop-blur-[5px] border-[1px] border-[#474747]"
+                    className="absolute inset-0 bg-gradient-to-tr from-[#0d0d0d] via-[#0d0d0de5] via-15% bg-opacity-0 rounded-2xl backdrop-blur-[5px] border-[1px] border-[#313131]"
                     style={{
                     // mixBlendMode: 'darken',
                     }}
