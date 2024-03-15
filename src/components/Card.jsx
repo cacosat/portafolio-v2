@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import downloadSvg from '../assets/download.svg'
 import projectImage from '../assets/cardsBg/conway.gif'
 import linkedin from '../assets/linkedin.png'
@@ -11,20 +11,29 @@ export default function Card(props) {
     const [emailLength, setEmailLength] = useState(0);
     const [messageLength, setMessageLength] = useState(0);
     
+
+    useEffect(() => {
+        emailjs.init('6ZZnr0mA6cXVvLYbw'); // Account public key
+    }, []);
+
     // props.config
     const config = props.config;
 
     function sendEmail(e) {
         e.preventDefault();
-    
-        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
-          .then((result) => {
-              console.log(result.text);
-              alert("Enviado");
-          }, (error) => {
-              console.log(error.text);
-              alert("No se pudo enviar");
-          });
+
+        // Generate a random contact ID and set it on the form
+        e.target.contact_id.value = Math.random() * 100000 | 0;
+
+        emailjs.sendForm('portfolio_gmail', 'template_k7auu2n', e.target)
+        .then((result) => {
+            console.log('Enviado!');
+            alert('Mensaje enviado!');
+            e.target.reset(); // Reset the form
+        }, (error) => {
+            console.log('Fallo el envío: ', error);
+            alert(`Falló el envío (${error})`);
+        });
     }
 
     function buttonLayout(config) {
@@ -120,6 +129,7 @@ export default function Card(props) {
                                         boxShadow: 'inset 0 0 5px #883FD4'
                                     }}
                         />
+                        <input type="hidden" name="contact_id" />
                     </form>
                 );
         
