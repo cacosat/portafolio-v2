@@ -10,6 +10,7 @@ import dashboardUx from './assets/dashboard.jpg'
 import leanCanvas from './assets/leancanvasds.jpg'
 
 
+
 function App() {
 
   const cardsConfig = {
@@ -22,7 +23,7 @@ function App() {
     },
     projectCardExpenseTracker: {
       type: 'project',
-      link: 'http://mockurl.com/expenseTracker',
+      link: 'https://github.com/cacosat/expense-tracker',
       primaryBg: expenseImage,
       title: 'Desarrollo de producto asistido por IA',
       fecha: '02/03/2024',
@@ -31,7 +32,7 @@ function App() {
     }, 
     projectCardDesafioUx: {
       type: 'project',
-      link: 'http://mockurl.com/medible',
+      link: 'https://www.figma.com/file/Di8qum5FRzKymuNC8a0Yy2/Joaquin-Sateler-DataScope-UX?type=design&node-id=0-1&mode=design&t=jCN0rX3dagE1gAvo-0',
       primaryBg: leanCanvas,
       title: 'Desafío UX: gestión de menús',
       fecha: '28/01/2024',
@@ -40,7 +41,7 @@ function App() {
     }, 
     projectCardSessions: {
       type: 'project',
-      link: 'http://mockurl.com/sessions',
+      link: 'https://www.figma.com/file/BTW5BIriUPaFRey0oOBJpo/Sessions-App?type=design&node-id=0%3A1&mode=design&t=IT1p0X9HV694Gtl3-1',
       primaryBg: sessionImage,
       title: 'Aplicación de productividad en base a la técnica pomodoro',
       fecha: '20/10/2022',
@@ -49,7 +50,7 @@ function App() {
     }, 
     projectCardConway: {
       type: 'project',
-      link: 'http://mockurl.com/conway',
+      link: 'https://cacosat.github.io/portafolio/pages/conway.html',
       primaryBg: conwayImage,
       title: "Conway's Game of life",
       fecha: '15/11/2023',
@@ -66,7 +67,7 @@ function App() {
     },
     contactCard: {
       type: 'form',
-      primaryBg: '#202020',
+      primaryBg: '#505050',
       title: 'Hablemos!',
       fecha: '',
 

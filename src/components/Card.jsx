@@ -4,6 +4,7 @@ import downloadSvg from '../assets/download.svg'
 import projectImage from '../assets/cardsBg/conway.gif'
 import linkedin from '../assets/linkedin.png'
 import github from '../assets/github.png'
+import emailjs from 'emailjs-com';
 
 export default function Card(props) {
     const [nameLength, setNameLength] = useState(0);
@@ -13,6 +14,19 @@ export default function Card(props) {
     // props.config
     const config = props.config;
 
+    function sendEmail(e) {
+        e.preventDefault();
+    
+        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
+          .then((result) => {
+              console.log(result.text);
+              alert("Enviado");
+          }, (error) => {
+              console.log(error.text);
+              alert("No se pudo enviar");
+          });
+    }
+
     function buttonLayout(config) {
         switch (config.type) {
             // type is a string of types: hero|project|about|form|footer
@@ -20,13 +34,13 @@ export default function Card(props) {
                 return <>
                         <div className="flex items-center justify-between w-[100%] gap-4">
                             <div className="flex gap-4">
-                                <button className={`flex gap-2 max-h-9 bg-[#391597] hover:bg-[#4419B3] transition 300ms text-neutral-300 text-sm font-light py-2 px-6 rounded-full`} 
+                                <button className={`flex gap-2 max-h-9 bg-[#391597] hover:bg-[#4419B3] active:bg-[#1d1058] transition 300ms text-neutral-300 text-sm font-light py-2 px-6 rounded-full`} 
                                         style={{ 
                                             boxShadow: 'inset 0 0 5px #883FD4' 
                                         }}>
                                     Sobre mi
                                 </button>
-                                <button className={`flex items-center gap-2 max-h-9 bg-[#0E0A1D] hover:bg-[#120D29] transition 300ms text-neutral-300 text-sm font-light py-2 px-6 rounded-full`} 
+                                <button className={`flex items-center gap-2 max-h-9 bg-[#0E0A1D] hover:bg-[#120D29] active:bg-[#1d1058] transition 300ms text-neutral-300 text-sm font-light py-2 px-6 rounded-full`} 
                                         style={{ 
                                             boxShadow: 'inset 0 0 5px #883FD4'
                                         }}>
@@ -56,7 +70,7 @@ export default function Card(props) {
                 return <>
                     <div className="flex gap-4">
                         <a href={config.link} target="_blank">
-                            <button className={`flex items-center gap-2 max-h-8 bg-[#0E0A1D] hover:bg-[#120D29] transition 300ms text-neutral-300 text-sm font-light py-2 px-6 rounded-full`} 
+                            <button className={`flex items-center gap-2 max-h-8 bg-[#0E0A1D] hover:bg-[#120D29] active:bg-[#1d1058] transition 300ms text-neutral-300 text-sm font-light py-2 px-6 rounded-full`} 
                                     style={{ 
                                         boxShadow: 'inset 0 0 5px #883FD4'
                                     }}>
@@ -68,7 +82,7 @@ export default function Card(props) {
             
             case 'form': // form component to render for about me card
                 return (
-                    <form className="flex flex-col gap-4 w-full" > {/* onSubmit={this.handleSubmit} */}
+                    <form className="flex flex-col gap-4 w-full" onSubmit={sendEmail}> 
                         <div className="flex flex-col">
                             <input type="text" 
                                     name="name" 
@@ -101,7 +115,7 @@ export default function Card(props) {
                         </div>
                         <input type="submit" 
                                 value="Enviar"
-                                className={`flex items-center justify-center gap-2 self-end max-h-9 max-w-24 bg-[#0E0A1D] hover:bg-[#120D29] transition 300ms text-neutral-300 text-sm font-light py-2 px-6 rounded-full`} 
+                                className={`flex items-center justify-center gap-2 self-end max-h-9 max-w-24 bg-[#0E0A1D] hover:bg-[#120D29] active:bg-[#1d1058] transition 300ms text-neutral-300 text-sm font-light py-2 px-6 rounded-full`} 
                                     style={{ 
                                         boxShadow: 'inset 0 0 5px #883FD4'
                                     }}
