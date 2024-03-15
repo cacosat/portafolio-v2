@@ -1,11 +1,14 @@
 import React from "react";
+import { useState } from "react";
 import downloadSvg from '../assets/download.svg'
 import projectImage from '../assets/cardsBg/conway.gif'
 import linkedin from '../assets/linkedin.png'
 import github from '../assets/github.png'
 
 export default function Card(props) {
-    // helper functions
+    const [nameLength, setNameLength] = useState(0);
+    const [emailLength, setEmailLength] = useState(0);
+    const [messageLength, setMessageLength] = useState(0);
     
     // props.config
     const config = props.config;
@@ -64,7 +67,47 @@ export default function Card(props) {
                 </>
             
             case 'form': // form component to render for about me card
-                break;
+                return (
+                    <form className="flex flex-col gap-4 w-full" > {/* onSubmit={this.handleSubmit} */}
+                        <div className="flex flex-col">
+                            <input type="text" 
+                                    name="name" 
+                                    placeholder="Name" 
+                                    maxLength="50" 
+                                    className="py-2 px-3 border-[1px] bg-[#202020] focus:bg-[#404040] border-[#626262] focus:border-[#909090] rounded-xl w-full"
+                                    onChange={(e) => setNameLength(e.target.value.length)}
+                            />
+                            <div className="text-xs text-gray-500 self-end">{nameLength}/50</div>
+                        </div>
+                        <div className="flex flex-col">
+                            <input type="email" 
+                                    name="email" 
+                                    placeholder="Email" 
+                                    maxLength="50" 
+                                    className="py-2 px-3 border-[1px] bg-[#202020] focus:bg-[#404040] border-[#626262] focus:border-[#909090] rounded-xl w-full" 
+                                    onChange={(e) => setEmailLength(e.target.value.length)}
+                            />
+                            <div className="text-xs text-gray-500 self-end">{emailLength}/50</div>
+                        </div>
+                        <div className="flex flex-col">
+                            <textarea name="message" 
+                                    placeholder="Message" 
+                                    maxLength="500" 
+                                    className="py-2 px-3 border-[1px] bg-[#202020] focus:bg-[#404040] border-[#626262] focus:border-[#909090] rounded-xl w-full" 
+                                    style={{resize: 'vertical'}} 
+                                    onChange={(e) => setMessageLength(e.target.value.length)}
+                            />
+                            <div className="text-xs text-gray-500 self-end">{messageLength}/500</div>
+                        </div>
+                        <input type="submit" 
+                                value="Enviar"
+                                className={`flex items-center justify-center gap-2 self-end max-h-9 max-w-24 bg-[#0E0A1D] hover:bg-[#120D29] transition 300ms text-neutral-300 text-sm font-light py-2 px-6 rounded-full`} 
+                                    style={{ 
+                                        boxShadow: 'inset 0 0 5px #883FD4'
+                                    }}
+                        />
+                    </form>
+                );
         
             case 'footer': // footer renders name - mail
                 return (
