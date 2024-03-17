@@ -62,7 +62,7 @@ function App() {
       primaryBg: aboutImage,
       title: 'Más sobre mi',
       fecha: '',
-      descripcion: 'Soy psicólogo con experiencia en el desarrollo de productos desde su concepción hasta su finalización, especializándome en Experiencia de Usuario (UX), en particular en UX Research. La combinación de conocimientos en psicología y tecnología me permite ofrecer una perspectiva única y altamente valiosa',
+      descripcion: 'Soy psicólogo con experiencia en el desarrollo de productos desde su concepción hasta su finalización, especializándome en Experiencia de Usuario (UX), en particular en UX Research. Tengo intereses en diferentes tecnologías, como la Inteligencia Artificial (IA), y como ponerlas al servicio de las personas de en función de lo que nos enseñan campos de estudio como el de Interacción Humano-Computadora (HCI) y Experiencia de Usuario (UX), entre otros.',
 
     },
     contactCard: {
