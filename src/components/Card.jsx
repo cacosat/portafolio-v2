@@ -18,18 +18,23 @@ export default function Card(props) {
     function sendEmail(e) {
         e.preventDefault();
 
-        // Generate a random contact ID and set it on the form
-        e.target.contact_id.value = Math.random() * 100000 | 0;
+        // Check if the input fields are not empty
+        if (contactForm.current.name.value && contactForm.current.email.value && contactForm.current.message.value) {
+            // Generate a random contact ID and set it on the form
+            e.target.contact_id.value = Math.random() * 100000 | 0;
 
-        emailjs.sendForm('service_rk3vign', 'template_pj20qie', contactForm.current, 'WFbcV8YLfEt9GC9ua')
-        .then((result) => {
-            console.log('Enviado!');
-            alert('Mensaje enviado!');
-            e.target.reset(); // Reset the form
-        }, (error) => {
-            console.log('Fallo el envío: ', error);
-            alert(`Falló el envío (${error})`);
-        });
+            emailjs.sendForm('service_rk3vign', 'template_pj20qie', contactForm.current, 'WFbcV8YLfEt9GC9ua')
+            .then((result) => {
+                console.log('Enviado!');
+                alert('Mensaje enviado!');
+                e.target.reset(); // Reset the form
+            }, (error) => {
+                console.log('Fallo el envío: ', error);
+                alert(`Falló el envío (${error})`);
+            });
+        } else {
+            alert('Debes llenar los 3 campos de contacto para enviar un mensaje.');
+        }
     }
 
     function buttonLayout(config) {
