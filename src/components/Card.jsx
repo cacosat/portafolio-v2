@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import downloadSvg from '../assets/download.svg'
 import projectImage from '../assets/cardsBg/conway.gif'
 import linkedin from '../assets/linkedin.png'
@@ -10,14 +10,10 @@ export default function Card(props) {
     const [nameLength, setNameLength] = useState(0);
     const [emailLength, setEmailLength] = useState(0);
     const [messageLength, setMessageLength] = useState(0);
-    
-
-    useEffect(() => {
-        emailjs.init('6ZZnr0mA6cXVvLYbw'); // Account public key
-    }, []);
 
     // props.config
     const config = props.config;
+    const contactForm = useRef();
 
     function sendEmail(e) {
         e.preventDefault();
@@ -25,7 +21,7 @@ export default function Card(props) {
         // Generate a random contact ID and set it on the form
         e.target.contact_id.value = Math.random() * 100000 | 0;
 
-        emailjs.sendForm('portfolio_gmail', 'template_k7auu2n', e.target)
+        emailjs.sendForm('service_rk3vign', 'template_pj20qie', contactForm.current, 'WFbcV8YLfEt9GC9ua')
         .then((result) => {
             console.log('Enviado!');
             alert('Mensaje enviado!');
@@ -91,7 +87,7 @@ export default function Card(props) {
             
             case 'form': // form component to render for about me card
                 return (
-                    <form className="flex flex-col gap-4 w-full" onSubmit={sendEmail}> 
+                    <form ref={contactForm} className="flex flex-col gap-4 w-full" onSubmit={sendEmail}> 
                         <div className="flex flex-col">
                             <input type="text" 
                                     name="name" 
