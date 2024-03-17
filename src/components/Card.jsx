@@ -5,6 +5,7 @@ import projectImage from '../assets/cardsBg/conway.gif'
 import linkedin from '../assets/linkedin.png'
 import github from '../assets/github.png'
 import emailjs from 'emailjs-com';
+import cv from '../assets/cv_joaquin_sateler.pdf';
 
 export default function Card(props) {
     const [nameLength, setNameLength] = useState(0);
@@ -44,19 +45,15 @@ export default function Card(props) {
                 return <>
                         <div className="flex items-center justify-between w-[100%] gap-4">
                             <div className="flex gap-4">
-                                <button className={`flex gap-2 max-h-9 bg-[#391597] hover:bg-[#4419B3] active:bg-[#1d1058] transition 300ms text-neutral-300 text-sm font-light py-2 px-6 rounded-full`} 
-                                        style={{ 
-                                            boxShadow: 'inset 0 0 5px #883FD4' 
-                                        }}>
-                                    Sobre mi
-                                </button>
-                                <button className={`flex items-center gap-2 max-h-9 bg-[#0E0A1D] hover:bg-[#120D29] active:bg-[#1d1058] transition 300ms text-neutral-300 text-sm font-light py-2 px-6 rounded-full`} 
-                                        style={{ 
-                                            boxShadow: 'inset 0 0 5px #883FD4'
-                                        }}>
-                                    Curriculum
-                                    <img src={downloadSvg} alt="Download" />
-                                </button>
+                                <a href={cv} target="_blank" rel="noopener noreferrer">
+                                    <button className={`flex items-center gap-2 max-h-9 bg-[#391597] hover:bg-[#4419B3] active:bg-[#1d1058] transition 300ms text-neutral-300 text-sm font-light py-2 px-6 rounded-full`} 
+                                            style={{ 
+                                                boxShadow: 'inset 0 0 5px #883FD4'
+                                            }}>
+                                        Curriculum
+                                        <img src={downloadSvg} alt="Download" />
+                                    </button>
+                                </a>
                             </div>
                             <div className="md:flex flex-col items-end hidden">
                                 <div className="flex gap-2">
