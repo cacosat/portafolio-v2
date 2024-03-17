@@ -30,7 +30,7 @@ export default function Card(props) {
                 e.target.reset(); // Reset the form
             }, (error) => {
                 console.log('Fallo el envío: ', error);
-                alert(`Falló el envío (${error})`);
+                alert(`Falló el envío, puedes escribirme directamente a jsateler1@uc.cl`);
             });
         } else {
             alert('Debes llenar los 3 campos de contacto para enviar un mensaje.');
