@@ -160,7 +160,7 @@ export default function Card(props) {
                 >
                 {/* handles purple gradient */}
                 <div
-                    className="absolute inset-0 bg-gradient-to-tr from-[#0d0d0d] via-[#0d0d0de5] via-15% bg-opacity-0 rounded-2xl backdrop-blur-[5px] border-[1px] border-[#313131]"
+                    className="absolute inset-0 bg-gradient-to-tr from-[#0d0d0d] via-[#0d0d0de5] via-15% bg-opacity-0 rounded-2xl backdrop-blur-[8px] border-[1px] border-[#313131]"
                     style={{
                     // mixBlendMode: 'darken',
                     }}
