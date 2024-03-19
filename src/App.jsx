@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Card from './components/Card.jsx'
 import conwayImage from './assets/cardsBg/conway.gif'
@@ -8,10 +8,18 @@ import sessionImage from './assets/cardsBg/sessions.png'
 import aboutImage from './assets/cardsBg/forest.png'
 import dashboardUx from './assets/dashboard.jpg'
 import leanCanvas from './assets/leancanvasds.jpg'
+import ReactGA from 'react-ga';
 
-
+const TRACKING_ID = "G-TT80NZW4ZJ"; // Replace with your Google Analytics tracking ID
+ReactGA.initialize(TRACKING_ID);
 
 function App() {
+
+  useEffect(() => {
+    // To report page view
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
 
   const cardsConfig = {
     heroCard: {
@@ -19,7 +27,7 @@ function App() {
       primaryBg: '#2a116b',
       title: 'Joaquín Sateler',
       fecha: '',
-      descripcion: 'Psicólogo trabajando en Experiencia de Usuario (UX), diseñando soluciones tecnológicas con base en la conducta de las persona. Siempre con espíritu de aprendizaje y descubrimiento.',
+      descripcion: 'Actualmente trabajando en Experiencia de Usuario (UX). Me interesa la intersección entre las tecnologías informáticas y las personas, en cómo herramientas digitales pueden potenciar nuestras capacidades, que es lo que se requiere para lograrlo y también cómo mejor lograrlo.',
     },
     projectCardExpenseTracker: {
       type: 'project',
@@ -62,7 +70,7 @@ function App() {
       primaryBg: aboutImage,
       title: 'Más sobre mi',
       fecha: '',
-      descripcion: 'Soy psicólogo con experiencia en el desarrollo de productos desde su concepción hasta su finalización, especializándome en Experiencia de Usuario (UX), en particular en UX Research. Tengo intereses en diferentes tecnologías, como la Inteligencia Artificial (IA), y como ponerlas al servicio de las personas de en función de lo que nos enseñan campos de estudio como el de Interacción Humano-Computadora (HCI) y Experiencia de Usuario (UX), entre otros.',
+      descripcion: 'Soy psicólogo con experiencia en el desarrollo de productos desde su concepción hasta su finalización, especializándome en Experiencia de Usuario (UX), en particular en UX Research. Tengo intereses en diferentes tecnologías, como la Inteligencia Artificial (IA), y como ponerlas al servicio de las personas de en función de lo que nos enseñan campos de estudio como el de Interacción Humano-Computadora (HCI) y Experiencia de Usuario (UX), entre otros.',
 
     },
     contactCard: {
