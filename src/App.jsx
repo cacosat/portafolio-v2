@@ -8,6 +8,8 @@ import sessionImage from './assets/cardsBg/sessions.png'
 import aboutImage from './assets/cardsBg/forest.png'
 import dashboardUx from './assets/dashboard.jpg'
 import leanCanvas from './assets/leancanvasds.jpg'
+import mailImg from './assets/mail.jpg'
+import aboutBg from './assets/aboutbg.png'
 import ReactGA from 'react-ga';
 
 const TRACKING_ID = "G-TT80NZW4ZJ"; // Replace with your Google Analytics tracking ID
@@ -33,18 +35,18 @@ function App() {
       type: 'project',
       link: 'https://github.com/cacosat/expense-tracker',
       primaryBg: expenseImage,
-      title: 'Desarrollo de producto asistido por IA',
+      title: 'Desarrollo de un Gestor de Gastos',
       fecha: '02/03/2024',
-      descripcion: 'Creación y desarrollo de producto asistido por IA de inicio a fin.',
+      descripcion: 'Producto diseñado y desarrollado con asistencia de Inteligencia Artificial',
 
     }, 
     projectCardDesafioUx: {
       type: 'project',
-      link: 'https://www.figma.com/file/Di8qum5FRzKymuNC8a0Yy2/Joaquin-Sateler-DataScope-UX?type=design&node-id=0-1&mode=design&t=jCN0rX3dagE1gAvo-0',
-      primaryBg: leanCanvas,
-      title: 'Desafío UX: gestión de menús',
+      link: 'https://www.figma.com/file/Di8qum5FRzKymuNC8a0Yy2/Desafio-UX?type=design&node-id=0%3A1&mode=design&t=5IBkjNwRUNy4M8EQ-1',
+      primaryBg: dashboardUx,
+      title: 'Desafio UX: Gestor de menús',
       fecha: '28/01/2024',
-      descripcion: 'El desafío fue diseñar una interfaz para la gestión de menús en línea de un restaurante de comida rápida, buscando mejorar los ingresos y la disponibilidad de productos. Para trabajar este problema y encontrar una solución, trabajé con un Lean UX Canvas.',
+      descripcion: 'El desafío fue diseñar una interfaz para la gestión de menús en línea de un restaurante, buscando mejorar los ingresos y la disponibilidad de productos. Por medio de un Lean UX Canvas pude perfilar mejor el problema y explorar posibles soluciones, en función de lo que luego diseñe una propuesta en alta fidelidad.',
 
     }, 
     projectCardSessions: {
@@ -67,15 +69,15 @@ function App() {
     },
     aboutCard: {
       type: 'about',
-      primaryBg: aboutImage,
+      primaryBg: aboutBg,
       title: 'Más sobre mi',
       fecha: '',
-      descripcion: 'Soy psicólogo con experiencia en el desarrollo de productos desde su concepción hasta su finalización, especializándome en Experiencia de Usuario (UX), en particular en UX Research. Tengo intereses en diferentes tecnologías, como la Inteligencia Artificial (IA), y como ponerlas al servicio de las personas de en función de lo que nos enseñan campos de estudio como el de Interacción Humano-Computadora (HCI) y Experiencia de Usuario (UX), entre otros.',
+      descripcion: 'Entré en el campo de la Experiecia de Usuario (UX) para explorar cómo la tecnología se entrelaza con nuestras vidas. Estoy particularmente interesado en el potencial de las herramientas digitales para expandir nuestras capacidades, transformar nuestra interacción con el mundo, y en cómo se puede favorecer esto por medio del diseño de sistemas que no solo sean funcionales, sino que también recojan la realidad de sus usuarios y tengan un impacto real.',
 
     },
     contactCard: {
       type: 'form',
-      primaryBg: '#505050',
+      primaryBg: mailImg,
       title: 'Hablemos!',
       fecha: '',
 

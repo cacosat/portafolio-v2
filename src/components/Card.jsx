@@ -93,7 +93,7 @@ export default function Card(props) {
                         <div className="flex flex-col">
                             <input type="text" 
                                     name="name" 
-                                    placeholder="Name" 
+                                    placeholder="Nombre" 
                                     maxLength="50" 
                                     className="py-2 px-3 border-[1px] bg-[#202020] focus:bg-[#404040] border-[#626262] focus:border-[#909090] rounded-xl w-full"
                                     onChange={(e) => setNameLength(e.target.value.length)}
@@ -103,7 +103,7 @@ export default function Card(props) {
                         <div className="flex flex-col">
                             <input type="email" 
                                     name="email" 
-                                    placeholder="Email" 
+                                    placeholder="Mail" 
                                     maxLength="50" 
                                     className="py-2 px-3 border-[1px] bg-[#202020] focus:bg-[#404040] border-[#626262] focus:border-[#909090] rounded-xl w-full" 
                                     onChange={(e) => setEmailLength(e.target.value.length)}
@@ -112,7 +112,7 @@ export default function Card(props) {
                         </div>
                         <div className="flex flex-col">
                             <textarea name="message" 
-                                    placeholder="Message" 
+                                    placeholder="Mensaje" 
                                     maxLength="500" 
                                     className="py-2 px-3 border-[1px] bg-[#202020] focus:bg-[#404040] border-[#626262] focus:border-[#909090] rounded-xl w-full" 
                                     style={{resize: 'vertical'}} 
@@ -151,9 +151,10 @@ export default function Card(props) {
     return <>
     {/* JSX */}
         <div className={`shadow-xl ${props.className} h-full w-full`}>
-            <div className={`flex items-end justify-start rounded-2xl relative h-full w-full bg-cover bg-no-repeat`} 
+            <div className={`flex items-end justify-center rounded-2xl relative h-full w-full bg-cover `} 
                 style={{
                     backgroundImage: `${config.primaryBg.split('')[0] != "#" ? `url(${config.primaryBg})` : ''}`,
+                    backgroundPosition: 'center',
                     backgroundColor: `${config.primaryBg.split('')[0] != "#" ? '' : `${config.primaryBg}99`}`
                 }}
                 >
