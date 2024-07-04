@@ -4,7 +4,10 @@ import Card from './components/Card.jsx'
 import conwayImage from './assets/cardsBg/conway.gif'
 import uxImage from './assets/cardsBg/researcher.png'
 import expenseImage from './assets/cardsBg/expense-tracker.jpg'
+import strainerImage from './assets/cardsBg/strainer.png'
+import paraderoImage from './assets/cardsBg/paradero.png'
 import sessionImage from './assets/cardsBg/sessions.png'
+import medibleGoImage from './assets/cardsBg/mediblego.png'
 import aboutImage from './assets/cardsBg/forest.png'
 import dashboardUx from './assets/dashboard.jpg'
 import leanCanvas from './assets/leancanvasds.jpg'
@@ -12,7 +15,7 @@ import mailImg from './assets/mail.jpg'
 import aboutBg from './assets/aboutbg.png'
 import ReactGA from 'react-ga';
 
-const TRACKING_ID = "G-TT80NZW4ZJ"; // Replace with your Google Analytics tracking ID
+const TRACKING_ID = "G-TT80NZW4ZJ"; // Google Analytics tracking ID
 ReactGA.initialize(TRACKING_ID);
 
 function App() {
@@ -30,6 +33,30 @@ function App() {
       title: 'Joaquín Sateler',
       fecha: '',
       descripcion: 'Actualmente trabajando en Experiencia de Usuario (UX). Me interesa la intersección entre las tecnologías informáticas y las personas, en cómo herramientas digitales pueden potenciar nuestras capacidades, que es lo que se requiere para lograrlo y también cómo mejor lograrlo.',
+    },
+    projectCardStrainer : {
+      type: 'project',
+      link: 'https://github.com/cacosat/desafio_strainer',
+      primaryBg: strainerImage,
+      title: 'Diseño y desarrollo de una landing e interfaz de chat',
+      fecha: '03/07/2024',
+      descripcion: 'Landing diseñada y desarrollada para una herramienta de reclutamiento con IA',
+    },
+    projectCardMediblego : {
+      type: 'project',
+      link: 'https://mediblego.com/',
+      primaryBg: paraderoImage,
+      title: 'App para consultar transporte público',
+      fecha: '03/07/2024',
+      descripcion: 'Desarrollo de una app (NextJS) para consultas del tiempo de llegada de los buses a un paradero específico',
+    },
+    projectCardParadero : {
+      type: 'project',
+      link: 'https://micro.cacosat.com/',
+      primaryBg: medibleGoImage,
+      title: 'Diseño de app para emprendedores en base a IA',
+      fecha: '03/07/2024',
+      descripcion: 'Trabajo principalmente en user journey, flujos (tareas, navegación, IA, etc.) y contenido de una app para apoyar emprendedores en base a IA',
     },
     projectCardExpenseTracker: {
       type: 'project',
@@ -95,11 +122,14 @@ function App() {
       <div className='grid grid-cols-4 grid-rows-9 gap-4 m-2 sm:m-8 max-w-[1280px]'>
         {/* TODO toggle for description */}
         {/* TODO Responsiveness: below 750px change layout */}
-        <Card config={cardsConfig.heroCard} className='col-span-4 lg:row-span-3 sm:row-span-2 row-span-3 ' />
-        <Card config={cardsConfig.projectCardExpenseTracker} className=' lg:row-span-3 lg:col-span-1 sm:col-span-1 sm:row-span-2 col-span-2 row-span-2' />
-        <Card config={cardsConfig.projectCardDesafioUx} className='lg:col-span-3 lg:row-span-2 sm:col-span-3 sm:row-span-1 col-span-2' />
+        <Card config={cardsConfig.heroCard} className='col-span-4 xl:row-span-3 lg:row-span-2 sm:row-span-2 row-span-3 ' />
+        <Card config={cardsConfig.projectCardMediblego} className='lg:col-span-2 lg:row-span-1 sm:col-span-2 sm:row-span-1 col-span-2 row-span-2' />
+        <Card config={cardsConfig.projectCardParadero} className='lg:col-span-2 lg:row-span-1 sm:col-span-2 sm:row-span-1 col-span-2 row-span-2' />
+        <Card config={cardsConfig.projectCardStrainer} className='lg:row-span-3 lg:col-span-1 sm:col-span-1 sm:row-span-2 col-span-2 row-span-2' />
+        <Card config={cardsConfig.projectCardExpenseTracker} className=' lg:col-span-1 lg:row-span-2 sm:col-span-3 sm:row-span-1 col-span-2' />
+        <Card config={cardsConfig.projectCardDesafioUx} className='lg:col-span-2 lg:row-span-2 sm:col-span-3 sm:row-span-1 col-span-2' />
         <Card config={cardsConfig.projectCardSessions} className='lg:col-span-2 lg:row-span-1 sm:col-span-2 sm:row-span-1 col-span-2 row-span-2' />
-        <Card config={cardsConfig.projectCardConway} className='lg:row-span-1 lg:col-span-1 sm:col-span-1 sm:row-span-1 col-span-2' />
+        <Card config={cardsConfig.projectCardConway} className='lg:row-span-1 lg:col-span-1 sm:col-span-2 sm:row-span-1 col-span-2 row-span-2' />
         <Card config={cardsConfig.aboutCard} className='lg:row-span-2 lg:col-span-2  sm:col-span-2 col-span-4 sm:row-span-2 row-span-3' />
         <Card config={cardsConfig.contactCard} className='lg:row-span-2 lg:col-span-2 sm:col-span-2 col-span-4 sm:row-span-2 row-span-3' />
         <Card config={cardsConfig.footerCard} className='col-span-4' />

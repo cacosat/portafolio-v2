@@ -77,7 +77,7 @@ export default function Card(props) {
                 return <>
                     <div className="flex gap-4">
                         <a href={config.link} target="_blank">
-                            <button className={`flex items-center gap-2 max-h-8 bg-[#0E0A1D] hover:bg-[#120D29] active:bg-[#1d1058] transition 300ms text-neutral-300 text-sm font-light py-2 px-6 rounded-full`} 
+                            <button className={`flex items-center gap-2 text-nowrap max-h-8 bg-[#0E0A1D] hover:bg-[#120D29] active:bg-[#1d1058] transition 300ms text-neutral-300 text-sm font-light py-2 px-6 rounded-full`} 
                                     style={{ 
                                         boxShadow: 'inset 0 0 5px #883FD4'
                                     }}>
