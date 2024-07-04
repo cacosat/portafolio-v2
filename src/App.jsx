@@ -42,17 +42,17 @@ function App() {
       fecha: '03/07/2024',
       descripcion: 'Landing diseñada y desarrollada para una herramienta de reclutamiento con IA',
     },
-    projectCardMediblego : {
+    projectCardParadero: {
       type: 'project',
-      link: 'https://mediblego.com/',
+      link: 'https://github.com/cacosat/paradero',
       primaryBg: paraderoImage,
       title: 'App para consultar transporte público',
       fecha: '03/07/2024',
       descripcion: 'Desarrollo de una app (NextJS) para consultas del tiempo de llegada de los buses a un paradero específico',
     },
-    projectCardParadero : {
+    projectCardMediblego : {
       type: 'project',
-      link: 'https://micro.cacosat.com/',
+      link: 'https://mediblego.com/',
       primaryBg: medibleGoImage,
       title: 'Diseño de app para emprendedores en base a IA',
       fecha: '03/07/2024',
