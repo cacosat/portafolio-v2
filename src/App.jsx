@@ -32,7 +32,7 @@ function App() {
       primaryBg: '#2a116b',
       title: 'Joaquín Sateler',
       fecha: '',
-      descripcion: 'Actualmente trabajando en Experiencia de Usuario (UX). Me interesa la intersección entre las tecnologías informáticas y las personas, en cómo herramientas digitales pueden potenciar nuestras capacidades, que es lo que se requiere para lograrlo y también cómo mejor lograrlo.',
+      descripcion: 'Me interesa la intersección entre las tecnologías informáticas y las personas, cómo pueden potenciar nuestras capacidades y que es lo que se requiere para lograr un impacto real.',
     },
     projectCardStrainer : {
       type: 'project',
