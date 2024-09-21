@@ -14,99 +14,114 @@ import leanCanvas from './assets/leancanvasds.jpg'
 import mailImg from './assets/mail.jpg'
 import aboutBg from './assets/aboutbg.png'
 import ReactGA from 'react-ga';
+import { useTranslation } from 'react-i18next'
+import LanguageSwitcher from './components/LanguageSwitcher.jsx'
 
 const TRACKING_ID = "G-TT80NZW4ZJ"; // Google Analytics tracking ID
 ReactGA.initialize(TRACKING_ID);
 
 function App() {
+  const { t } = useTranslation();
 
   useEffect(() => {
     // To report page view
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
-
   const cardsConfig = {
     heroCard: {
       type: 'hero',
       primaryBg: '#2a116b',
-      title: 'Joaquín Sateler',
+      title: t('heroTitle'),
       fecha: '',
-      descripcion: 'Me interesa la intersección entre las tecnologías informáticas y las personas, cómo pueden potenciar nuestras capacidades y que es lo que se requiere para lograr un impacto real.',
+      descripcion: t('heroDescription'),
     },
     projectCardStrainer : {
       type: 'project',
       link: 'https://github.com/cacosat/desafio_strainer',
       primaryBg: strainerImage,
-      title: 'Diseño y desarrollo de una landing e interfaz de chat',
+      title: t('projectStrainerTitle'),
       fecha: '03/07/2024',
-      descripcion: 'Landing diseñada y desarrollada para una herramienta de reclutamiento con IA',
+      descripcion: t('projectStrainerDescription'),
+      buttonText: t('seeMore')
     },
     projectCardParadero: {
       type: 'project',
       link: 'https://github.com/cacosat/paradero',
       primaryBg: paraderoImage,
-      title: 'App para consultar transporte público',
+      title: t('projectParaderoTitle'),
       fecha: '03/07/2024',
-      descripcion: 'Desarrollo de una app (NextJS) para consultas del tiempo de llegada de los buses a un paradero específico',
+      descripcion: t('projectParaderoDescription'),
+      buttonText: t('seeMore')
     },
     projectCardMediblego : {
       type: 'project',
       link: 'https://mediblego.com/',
       primaryBg: medibleGoImage,
-      title: 'Diseño de app para emprendedores en base a IA',
+      title: t('projectMediblegoTitle'),
       fecha: '03/07/2024',
-      descripcion: 'Trabajo principalmente en user journey, flujos (tareas, navegación, IA, etc.) y contenido de una app para apoyar emprendedores en base a IA',
+      descripcion: t('projectMediblegoDescription'),
+      buttonText: t('seeMore')
     },
     projectCardExpenseTracker: {
       type: 'project',
       link: 'https://github.com/cacosat/expense-tracker',
       primaryBg: expenseImage,
-      title: 'Desarrollo de un Gestor de Gastos',
+      title: t('projectExpenseTrackerTitle'),
       fecha: '02/03/2024',
-      descripcion: 'Producto diseñado y desarrollado con asistencia de Inteligencia Artificial',
+      descripcion: t('projectExpenseTrackerDescription'),
+      buttonText: t('seeMore')
 
     }, 
     projectCardDesafioUx: {
       type: 'project',
       link: 'https://www.figma.com/file/Di8qum5FRzKymuNC8a0Yy2/Desafio-UX?type=design&node-id=0%3A1&mode=design&t=5IBkjNwRUNy4M8EQ-1',
       primaryBg: dashboardUx,
-      title: 'Desafio UX: Gestor de menús',
+      title: t('projectUxChallengeTitle'),
       fecha: '28/01/2024',
-      descripcion: 'El desafío fue diseñar una interfaz para la gestión de menús en línea de un restaurante, buscando mejorar los ingresos y la disponibilidad de productos. Por medio de un Lean UX Canvas pude perfilar mejor el problema y explorar posibles soluciones, en función de lo que luego diseñe una propuesta en alta fidelidad.',
+      descripcion: t('projectUxChallengeDescription'),
+      buttonText: t('seeMore')
 
     }, 
     projectCardSessions: {
       type: 'project',
       link: 'https://www.figma.com/file/BTW5BIriUPaFRey0oOBJpo/Sessions-App?type=design&node-id=0%3A1&mode=design&t=IT1p0X9HV694Gtl3-1',
       primaryBg: sessionImage,
-      title: 'Aplicación de productividad en base a la técnica pomodoro',
+      title: t('projectSessionsTitle'),
       fecha: '20/10/2022',
       descripcion: '',
+      buttonText: t('seeMore')
 
     }, 
     projectCardConway: {
       type: 'project',
       link: 'https://cacosat.github.io/portafolio/pages/conway.html',
       primaryBg: conwayImage,
-      title: "Conway's Game of life",
+      title: t('projectConwayTitle'),
       fecha: '15/11/2023',
       descripcion: '',
+      buttonText: t('seeMore')
 
     },
     aboutCard: {
       type: 'about',
       primaryBg: aboutBg,
-      title: 'Más sobre mi',
+      title: t('aboutTitle'),
       fecha: '',
-      descripcion: 'Entré en el campo de la Experiecia de Usuario (UX) para explorar cómo la tecnología se entrelaza con nuestras vidas. Estoy particularmente interesado en el potencial de las herramientas digitales para expandir nuestras capacidades, transformar nuestra interacción con el mundo, y en cómo se puede favorecer esto por medio del diseño de sistemas que no solo sean funcionales, sino que también recojan la realidad de sus usuarios y tengan un impacto real.',
+      descripcion: t('aboutDescription'),
 
     },
     contactCard: {
       type: 'form',
       primaryBg: mailImg,
-      title: 'Hablemos!',
+      title: t('contactTitle'),
       fecha: '',
+      buttonText: t('sendMessage'),
+      placeholders: {
+        name: t('namePlaceholder'),
+        mail: t('mailPlaceholder'),
+        message: t('messagePlaceholder')
+      }
 
     }, 
     footerCard: {
@@ -131,7 +146,7 @@ function App() {
         <Card config={cardsConfig.projectCardSessions} className='lg:col-span-2 lg:row-span-1 sm:col-span-2 sm:row-span-1 col-span-2 row-span-2' />
         <Card config={cardsConfig.projectCardConway} className='lg:row-span-1 lg:col-span-1 sm:col-span-2 sm:row-span-1 col-span-2 row-span-2' />
         <Card config={cardsConfig.aboutCard} className='lg:row-span-2 lg:col-span-2  sm:col-span-2 col-span-4 sm:row-span-2 row-span-3' />
-        <Card config={cardsConfig.contactCard} className='lg:row-span-2 lg:col-span-2 sm:col-span-2 col-span-4 sm:row-span-2 row-span-3' />
+        <Card config={cardsConfig.contactCard} placeholders={cardsConfig.contactCard.placeholders} className='lg:row-span-2 lg:col-span-2 sm:col-span-2 col-span-4 sm:row-span-2 row-span-3' />
         <Card config={cardsConfig.footerCard} className='col-span-4' />
 
       </div>

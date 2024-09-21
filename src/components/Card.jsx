@@ -6,6 +6,7 @@ import linkedin from '../assets/linkedin.png'
 import github from '../assets/github.png'
 import emailjs from 'emailjs-com';
 import cv from '../assets/cv_joaquin_sateler.pdf';
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Card(props) {
     const [nameLength, setNameLength] = useState(0);
@@ -44,13 +45,16 @@ export default function Card(props) {
             case 'hero':
                 return <>
                         <div className="flex items-center justify-between w-[100%] gap-4">
+                            <div className="absolute top-[24px] right-[32px] font-light text-[14px] text-neutral-400 tracking-wide">
+                                <LanguageSwitcher />
+                            </div>
                             <div className="flex gap-4">
                                 <a href={cv} target="_blank" rel="noopener noreferrer">
                                     <button className={`flex items-center gap-2 max-h-9 bg-[#391597] hover:bg-[#4419B3] active:bg-[#1d1058] transition 300ms text-neutral-300 text-sm font-light py-2 px-6 rounded-full`} 
                                             style={{ 
                                                 boxShadow: 'inset 0 0 5px #883FD4'
                                             }}>
-                                        Curriculum
+                                        CV
                                         <img src={downloadSvg} alt="Download" />
                                     </button>
                                 </a>
@@ -65,7 +69,7 @@ export default function Card(props) {
                                     </a>
                                 </div>
                                 <div>
-                                    <a href="mailto:jsateler1@uc.cl" className=" underline text-neutral-600 font-semibold text-sm">
+                                    <a href="mailto:jsateler1@uc.cl" className=" underline text-neutral-400 font-light text-sm">
                                         jsateler1@uc.cl
                                     </a>
                                 </div>
@@ -81,7 +85,7 @@ export default function Card(props) {
                                     style={{ 
                                         boxShadow: 'inset 0 0 5px #883FD4'
                                     }}>
-                                Ver más
+                                {config.buttonText}
                             </button>
                         </a>
                     </div>
@@ -93,7 +97,7 @@ export default function Card(props) {
                         <div className="flex flex-col">
                             <input type="text" 
                                     name="name" 
-                                    placeholder="Nombre" 
+                                    placeholder={config.placeholders.name}
                                     maxLength="50" 
                                     className="py-2 px-3 border-[1px] bg-[#202020] focus:bg-[#404040] border-[#626262] focus:border-[#909090] rounded-xl w-full"
                                     onChange={(e) => setNameLength(e.target.value.length)}
@@ -103,7 +107,7 @@ export default function Card(props) {
                         <div className="flex flex-col">
                             <input type="email" 
                                     name="email" 
-                                    placeholder="Mail" 
+                                    placeholder={config.placeholders.mail} 
                                     maxLength="50" 
                                     className="py-2 px-3 border-[1px] bg-[#202020] focus:bg-[#404040] border-[#626262] focus:border-[#909090] rounded-xl w-full" 
                                     onChange={(e) => setEmailLength(e.target.value.length)}
@@ -112,7 +116,7 @@ export default function Card(props) {
                         </div>
                         <div className="flex flex-col">
                             <textarea name="message" 
-                                    placeholder="Mensaje" 
+                                    placeholder={config.placeholders.message} 
                                     maxLength="500" 
                                     className="py-2 px-3 border-[1px] bg-[#202020] focus:bg-[#404040] border-[#626262] focus:border-[#909090] rounded-xl w-full" 
                                     style={{resize: 'vertical'}} 
@@ -121,7 +125,7 @@ export default function Card(props) {
                             <div className="text-xs text-gray-500 self-end">{messageLength}/500</div>
                         </div>
                         <input type="submit" 
-                                value="Enviar"
+                                value={config.placeholders.buttonText}
                                 className={`flex items-center justify-center gap-2 self-end max-h-9 max-w-24 bg-[#0E0A1D] hover:bg-[#120D29] active:bg-[#1d1058] transition 300ms text-neutral-300 text-sm font-light py-2 px-6 rounded-full`} 
                                     style={{ 
                                         boxShadow: 'inset 0 0 5px #883FD4'
@@ -167,6 +171,7 @@ export default function Card(props) {
                 ></div>
                 {/* Content here, make sure this comes after the overlay div so it's on top */}
                 <div className="flex flex-col items-start gap-4 m-6 lg:m-8 z-10 opacity-100 w-[100%]">
+                    
                     <div className="flex flex-col gap-2">
                         <h1 className={`${config.type === 'hero' ? 'text-[64px] font-semibold' : 'text-sm sm:text-xl md:text-2xl'}  text-neutral-50`}>
                             {config.title}
