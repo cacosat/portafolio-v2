@@ -8,6 +8,7 @@ import strainerImage from './assets/cardsBg/strainer.png'
 import paraderoImage from './assets/cardsBg/paradero.png'
 import sessionImage from './assets/cardsBg/sessions.png'
 import medibleGoImage from './assets/cardsBg/mediblego.png'
+import musicatImage from './assets/cardsBg/musicat.png'
 import aboutImage from './assets/cardsBg/forest.png'
 import dashboardUx from './assets/dashboard.jpg'
 import leanCanvas from './assets/leancanvasds.jpg'
@@ -36,12 +37,21 @@ function App() {
       fecha: '',
       descripcion: t('heroDescription'),
     },
+    projectCardMusicat: {
+      type: 'project',
+      link: 'https://github.com/cacosat/musicat',
+      primaryBg: musicatImage,
+      title: t('projectMusicatTitle'),
+      fecha: '10/05/2024',
+      descripcion: t('projectMusicatDescription'),
+      buttonText: t('seeMore')
+    },
     projectCardStrainer : {
       type: 'project',
       link: 'https://github.com/cacosat/desafio_strainer',
       primaryBg: strainerImage,
       title: t('projectStrainerTitle'),
-      fecha: '03/07/2024',
+      fecha: '07/03/2024',
       descripcion: t('projectStrainerDescription'),
       buttonText: t('seeMore')
     },
@@ -137,7 +147,8 @@ function App() {
       <div className='grid grid-cols-4 grid-rows-9 gap-4 m-2 sm:m-8 max-w-[1280px]'>
         {/* TODO toggle for description */}
         {/* TODO Responsiveness: below 750px change layout */}
-        <Card config={cardsConfig.heroCard} className='col-span-4 xl:row-span-3 lg:row-span-2 sm:row-span-2 row-span-3 ' />
+        <Card config={cardsConfig.heroCard} className='col-span-4 xl:row-span-2 lg:row-span-2 sm:row-span-2 row-span-3 ' />
+        <Card config={cardsConfig.projectCardMusicat} className='lg:col-span-4 lg:row-span-1 sm:col-span-4 sm:row-span-1 col-span-4 row-span-1' />
         <Card config={cardsConfig.projectCardMediblego} className='lg:col-span-2 lg:row-span-1 sm:col-span-2 sm:row-span-1 col-span-2 row-span-2' />
         <Card config={cardsConfig.projectCardParadero} className='lg:col-span-2 lg:row-span-1 sm:col-span-2 sm:row-span-1 col-span-2 row-span-2' />
         <Card config={cardsConfig.projectCardStrainer} className='lg:row-span-3 lg:col-span-1 sm:col-span-1 sm:row-span-2 col-span-2 row-span-2' />
